@@ -1,6 +1,7 @@
 package jchess.main;
 
 import jchess.board.Board;
+import jchess.gui.Table;
 
 public class JChess {
 
@@ -8,7 +9,8 @@ public class JChess {
 		Board board = Board.createStandarBoard();
 		
 		System.out.println(board);
-
+		
+		Table table = new Table();
 	}
 
 }
