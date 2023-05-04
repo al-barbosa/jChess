@@ -79,4 +79,8 @@ public abstract class Tile {
 			return this.pieceOnTile;
 		}
 	}
+
+	public int getTileCoordinate() {
+		return this.tileCoordinate;
+	};
 }
