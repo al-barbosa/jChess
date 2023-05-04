@@ -1,8 +1,9 @@
 package jchess.board;
 
 import java.util.HashMap;
-import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
 
 import jchess.pieces.Piece;
 
@@ -40,6 +41,11 @@ public abstract class Tile {
 		}
 		
 		@Override
+		public String toString() {
+			return "-";
+		}
+		
+		@Override
 		public boolean isTileOccupied() {
 			return false;
 		}
@@ -56,7 +62,11 @@ public abstract class Tile {
 		private OccupiedTile(int coordinate, Piece pieceOnTile){
 			super(coordinate);
 			this.pieceOnTile = pieceOnTile;
-			
+		}
+		
+		@Override
+		public String toString() {
+			return getPiece().getPieceAlliance().isBlack() ? getPiece().toString().toLowerCase() : getPiece().toString();
 		}
 
 		@Override

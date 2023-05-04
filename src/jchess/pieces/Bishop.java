@@ -16,9 +16,8 @@ import jchess.board.Tile;
 public class Bishop extends Piece {
 	private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = { -9, -7, 7, 9 };
 	
-	Bishop(int piecePosition, Alliance pieceAlliance) {
-		super(piecePosition, pieceAlliance);
-		// TODO Auto-generated constructor stub
+	public Bishop(final Alliance pieceAlliance, final int piecePosition) {
+		super(piecePosition, pieceAlliance, PieceType.BISHOP);
 	}
 
 	@Override
@@ -51,7 +50,17 @@ public class Bishop extends Piece {
 		
 		return ImmutableList.copyOf(legalMoves);
 	}
+	
+	@Override
+	public String toString() {
+		return PieceType.BISHOP.toString();
+	}
 
+	@Override
+	public Piece movePiece(Move move) {
+		return new Bishop(move.getMovedPiece().getPieceAlliance(), move.getDestinationCordinate());
+	}
+	
 	private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
 		return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -9 || candidateOffset == 7);
 	}
