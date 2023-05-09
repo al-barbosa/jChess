@@ -14,3 +14,5 @@ This is a chess project written in Java, currently under development. The projec
 - Implement AI to play against the user
 - Add game-saving functionality
 - Implement multiplayer feature
+
+This project was based on the [BlackWidow-Chess, by amir650](https://github.com/amir650/BlackWidow-Chess)
