@@ -27,7 +27,7 @@ public enum Alliance {
 		@Override
 		public Player choosePlayer(final WhitePlayer whitePlayer, final BlackPlayer blackPlayer) {
 			// TODO Auto-generated method stub
-			return null;
+			return whitePlayer;
 		}
 	},
 	BLACK {
@@ -52,7 +52,7 @@ public enum Alliance {
 		@Override
 		public Player choosePlayer(final WhitePlayer whitePlayer, final BlackPlayer blackPlayer) {
 			// TODO Auto-generated method stub
-			return null;
+			return blackPlayer;
 		}
 	};
 	
@@ -60,7 +60,7 @@ public enum Alliance {
 
 	public abstract boolean isBlack();
 
-	protected abstract boolean isWhite();
+	public abstract boolean isWhite();
 
 	public abstract Player choosePlayer(WhitePlayer whitePlayer, BlackPlayer blackPlayer);
 }
